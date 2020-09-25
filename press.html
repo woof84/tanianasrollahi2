@@ -1,0 +1,52 @@
+---
+layout: page
+title: Press
+description: I get so much of it.
+background: '/img/bg-about.jpg'
+---
+
+<!--
+{% for item in site.data.press %}
+
+<div class="card mb-3">
+  <div class="card-header">
+    {{item.date}}
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{item.title}}</h5>
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+{% endfor %}
+-->
+{% for item in site.data.press %}
+<div class="card mt-5">
+  <div class="card-header">
+    <strong>{{item.date}}</strong>
+  </div>
+  <div class="card-body">
+      <div class="media mt-2">
+        <a href="{{item.link}}" target="_blank" class="mr-4 d-none d-md-block" style="max-width: 30%;">
+          {% if item.image-link %}
+          <img src="{{ item.image-link }}" class="mr-3 img-fluid  d-none d-md-block" style="max-width: 100%;" alt="">
+          {% elsif item.image-local %}
+          <img src="img/{{ item.image-local }}" class="mr-3 img-fluid  d-none d-md-block" style="max-width: 100%;" alt="">
+          {% endif %}
+        </a>
+        <div class="media-body">
+          <h3 class="mt-0 mb-1"><a href="{{ item.link }}" target="_blank">{{ item.title }}</a></h3>
+          <p class="post-subtitle text-justify">
+            {% if item.quote %}
+            "{{ item.quote }}"
+            {% endif %}
+          </p>
+          <div class="btn-group btn-group-sm float-right" role="group" aria-label="Actions">
+            <a href="{{ item.link }}" class="btn btn-primary" target="_blank">Visit</a>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+{% endfor %}

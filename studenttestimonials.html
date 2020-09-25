@@ -1,0 +1,23 @@
+---
+layout: page
+title: Student Testimonials
+description: What can I say, the kids love me.
+background: '/img/bg-about.jpg'
+---
+
+<p>Throughout my time in university, I have had the privilege to serve as an "agent" for the <a href="https://www.studentsuccess.co/agents/" target="_blank">Student Success Agency</a>—a position that involves advising, mentoring, and academically supporting students ages 13-19, from all over the U.S. Each year, my students are asked to rate their time with me out of five with the option to add a comment.</p>
+
+<p>Below is every single comment I have ever recieved. (Yes, including the critical ones.)</p>
+ 
+<div class="card-columns mt-5">
+  {% for item in site.data.studenttestimonials %}
+  <div class="card">
+    <div class="card-body">
+      <p class="card-text" style="margin-top:0;">"{{item.quote}}"</p>
+      {% if item.name %}
+      <p class="card-text"><small class="text-muted">{{item.name}}</small></p>
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+</div>
