@@ -14,26 +14,21 @@ background: '/img/bg-about.jpg'
 <h2>Awards</h2>
 
 <ul>
+  {% for award in site.data.awards %}
   <li>
-    <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-    Award title
+    <a data-toggle="collapse" href="#{{ award.title | remove: " " | remove: "," | remove: "." | remove: "'" }}" role="button" aria-expanded="false" aria-controls="{{ award.title | remove: " " | remove: "," | remove: "." | remove: "'" }}">
+      <b>{{ award.date }}</b> - {{ award.title }} - <span class="text.muted">{{ award.organization }}</span>
     </a>
   </li>
-  <div class="collapse" id="collapseExample">
+  <div class="collapse" id="{{ award.title | remove: " " | remove: "," | remove: "." | remove: "'" }}">
      <div class="card card-body">
-      Award Description
+      {{ award.description }}
+        {% if award.link %}
+        <p><a href="{{ award.link }}" class="btn btn-primary" target="_blank">More Info</a></p>
+        {% endif %}                                                                                        
      </div>
   </div>
-  <li>
-    <a data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2">
-    Award title 2
-    </a>
-  </li>
-  <div class="collapse" id="collapseExample2">
-     <div class="card card-body">
-      Award Description 2
-     </div>
-  </div>
+  {% endfor %}
 </ul>
 
 
