@@ -21,7 +21,7 @@ background: '/img/bg-about.jpg'
     </a>
   </li>
   <div class="collapse" id="{{ award.title | remove: " " | remove: "," | remove: "." | remove: "'" }}">
-     <div class="card card-body">
+     <div class="card card-body mb-2">
       {{ award.description }}
         {% if award.link %}
         <p><a href="{{ award.link }}" class="btn btn-primary" target="_blank">More Info</a></p>
