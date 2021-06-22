@@ -30,28 +30,3 @@ background: '/img/bg-about.jpg'
   </div>
   {% endfor %}
 </ul>
-
-
-<!--
-<div id="accordion">
-  {% for award in site.data.awards %}
-  <div class="card">
-    <div class="card-header" id="heading{{ award.title | remove: " " | remove: "," | remove: "." | remove: "'" }}">
-      <h5 class="mb-0">
-        <button class="btn btn-link" data-toggle="collapse" data-target="#{{ award.title | remove: " " | remove: "," | remove: "." | remove: "'" }}" aria-expanded="true" aria-controls="{{ award.title | remove: " " | remove: "," | remove: "." | remove: "'" }}">
-          <span class="text-center">{{ award.date }} - {{ award.title }} - {{ award.organization }}</span>
-        </button>
-      </h5>
-    </div>
-    <div id="{{ award.title | remove: " " | remove: "," | remove: "." | remove: "'" }}" class="collapse" aria-labelledby="heading{{ award.title | remove: " " | remove: "," | remove: "." | remove: "'" }}" data-parent="#accordion">
-      <div class="card-body">
-        {{ award.description }}
-        {% if award.link %}
-        <p><a href="{{ award.link }}" class="btn btn-primary" target="_blank">More Info</a></p>
-        {% endif %}
-      </div>
-    </div>
-  </div>
-  {% endfor %}
-</div>
--->
