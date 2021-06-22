@@ -17,14 +17,14 @@ background: '/img/bg-about.jpg'
   {% for award in site.data.awards %}
   {{ award.title | remove: " " | remove: "," | remove: "." | remove: "'" }}
   <div class="card">
-    <div class="card-header" id="{{ award.title | remove: " " | remove: "," | remove: "." | remove: "'" }}">
+    <div class="card-header" id="heading{{ award.title | remove: " " | remove: "," | remove: "." | remove: "'" }}">
       <h5 class="mb-0">
         <button class="btn btn-link" data-toggle="collapse" data-target="#{{ award.title | remove: " " | remove: "," | remove: "." | remove: "'" }}" aria-expanded="true" aria-controls="{{ award.title | remove: " " | remove: "," | remove: "." | remove: "'" }}">
           {{ award.date }} - {{ award.title }} - {{ award.organization }}
         </button>
       </h5>
     </div>
-    <div id="{{ award.title | remove: " " | remove: "," | remove: "." | remove: "'" }}" class="collapse" aria-labelledby="{{ award.title | remove: " " | remove: "," | remove: "." | remove: "'" }}" data-parent="#accordion">
+    <div id="{{ award.title | remove: " " | remove: "," | remove: "." | remove: "'" }}" class="collapse" aria-labelledby="heading{{ award.title | remove: " " | remove: "," | remove: "." | remove: "'" }}" data-parent="#accordion">
       <div class="card-body">
         {{ award.description }}
         {% if award.link %}
