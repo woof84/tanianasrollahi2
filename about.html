@@ -15,7 +15,6 @@ background: '/img/bg-about.jpg'
 
 <div id="accordion">
   {% for award in site.data.awards %}
-  {{ award.title | remove: " " | remove: "," | remove: "." | remove: "'" }}
   <div class="card">
     <div class="card-header" id="heading{{ award.title | remove: " " | remove: "," | remove: "." | remove: "'" }}">
       <h5 class="mb-0">
