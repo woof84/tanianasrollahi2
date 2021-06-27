@@ -1,0 +1,23 @@
+---
+layout: page
+title: Student Testimonials
+description:
+background: '/img/bg-testimonials.JPG'
+---
+
+<p>While I currently serve as a graduate teaching assistant, I have also spent over three years academically mentoring, tutoring, and counseling over 100 high school students through <a href="https://www.studentsuccess.co/agents/" target="_blank">Student Success Agency</a>. Below is a list of every student evaluation I have received.</p>
+
+<p>(You might see students referring to me as an agent, tutor, mentor, or teacher. An agent can be understood as a mentor or academic life coach.)</p>
+ 
+<div class="card-columns mt-5">
+  {% for item in site.data.studenttestimonials %}
+  <div class="card">
+    <div class="card-body">
+      <p class="card-text" style="margin-top:0;">"{{item.quote}}"</p>
+      {% if item.name %}
+      <p class="card-text"><small class="text-muted">{{item.name}}</small></p>
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+</div>
